@@ -32,7 +32,8 @@ Example Findings:
 - Port 22 open (SSH)
 - Port 443 open (HTTPS)
 - Apache server exposed
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/ce4f810e-ebe6-4a64-9944-2904ae5290fb" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/1d5f1f2b-94cf-42ee-8d82-b95998af5eb0" />
+
 
 ---
 
@@ -53,7 +54,8 @@ Usefulness:
 - Understand domain ownership
 - Check domain age
 - Verify legitimacy
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/c01ab2ce-0122-40c5-a43e-30c3350623ae" />
+
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/8943b48f-6910-480c-bc06-30aaab38f04f" />
 
 ---
 
