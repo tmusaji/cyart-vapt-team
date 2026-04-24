@@ -1,0 +1,3 @@
+## Non Technical Summary
+
+During this training, a complete security assessment was performed using legal practice environments such as PortSwigger Web Security Academy labs and Metasploitable 2. The work included information gathering, vulnerability scanning, exploitation testing, post exploitation activities, and final reporting. Common security issues such as SQL Injection, Cross Site Scripting (XSS), weak access controls, and outdated services were identified in controlled environments. Practical testing helped understand how attackers misuse security gaps and how organizations can reduce risks. Recommended improvements include secure coding practices, regular patching, strong access controls, continuous monitoring, and routine security assessments.
