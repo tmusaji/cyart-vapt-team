@@ -1,162 +1,184 @@
-Reconnaissance Practice
-Introduction
+# Reconnaissance Practice
 
-Reconnaissance is the information gathering phase of a security assessment. It is used to collect publicly available and technical information about a target before deeper testing begins. The goal is to understand the target’s external exposure, identify assets, discover technologies in use, and detect potential attack surfaces. This phase helps security professionals build an accurate picture of the organization’s digital footprint.
+## Introduction
 
-Reconnaissance can be passive, where information is collected without directly interacting with the target, or active, where tools query services or systems. For this task, publicly available tools such as search engines and internet intelligence platforms are used.
+Reconnaissance is the information gathering phase of a security assessment. It is used to collect publicly available and technical information about a target before deeper testing begins.
 
-Tools Used
-Shodan
+The main goal is to understand the target’s external exposure, identify assets, discover technologies in use, and detect possible attack surfaces.
 
-Shodan is a search engine that indexes internet-connected devices and exposed services. It helps identify publicly accessible servers, open ports, banners, SSL certificates, webcams, routers, and other devices.
+Reconnaissance can be:
 
-Common use cases:
+- Passive Reconnaissance – Collecting information without directly interacting with the target.
+- Active Reconnaissance – Sending requests or scanning systems to gather details.
 
-Discover exposed remote access services like SSH or RDP
-Identify web servers and versions
-Find outdated or misconfigured systems
-View geographic exposure of assets
+---
 
-Example findings:
+## Tools Used
 
-Port 22 open for SSH
-Port 443 open for HTTPS
-Web server banner showing software version
-WHOIS
+## Shodan
 
-WHOIS is used to gather domain registration information. It helps identify ownership and administrative details related to a domain.
+Shodan is a search engine used to discover internet-connected devices and exposed services.
 
-Typical WHOIS data includes:
+It helps identify:
 
-Registrar name
-Domain creation date
-Expiration date
-Name servers
-Registrant organization (if public)
-Administrative contacts (sometimes masked)
+- Open ports
+- Public servers
+- SSL certificates
+- Webcams, routers, IoT devices
+- Server banners and versions
+
+Example Findings:
+
+- Port 22 open (SSH)
+- Port 443 open (HTTPS)
+- Apache server exposed
+
+---
+
+## WHOIS
+
+WHOIS is used to gather domain registration details.
+
+Typical information includes:
+
+- Registrar name
+- Domain creation date
+- Expiry date
+- Name servers
+- Registrant details (if public)
 
 Usefulness:
 
-Understand domain history
-Identify associated infrastructure
-Verify legitimacy of domains
-Subdomain Finder
+- Understand domain ownership
+- Check domain age
+- Verify legitimacy
 
-Subdomain enumeration tools are used to identify subdomains associated with the main domain.
+---
+
+## Subdomain Finder
+
+Subdomain enumeration tools are used to discover subdomains linked to the main domain.
 
 Examples:
 
-blog.example.com
-mail.example.com
-dev.example.com
-api.example.com
+- blog.example.com
+- dev.example.com
+- api.example.com
+- mail.example.com
 
 Why it matters:
 
-Many organizations secure the main website but overlook older or development subdomains. These can expose login panels, staging environments, test servers, or forgotten applications.
+Organizations sometimes forget to secure development or old subdomains.
 
 Common tools:
 
-Sublist3r
-Amass
-Google Search
+- Sublist3r
+- Amass
 
-Search engines can reveal publicly indexed information that may not be obvious from the homepage.
+---
 
-Examples:
+## Google Search
 
-Public PDFs containing employee names
-Login portals
-Old webpages
-Exposed directories
-Cached content
-Job listings showing technologies used
-
-Advanced search operators can refine results, such as searching for PDFs, admin pages, or specific site content.
-
-Information Collected During Reconnaissance
-Domain Information
-
-The following details are commonly collected:
-
-Main domain name
-Registrar
-Domain age
-DNS records
-Name servers
-SSL certificate details
-
-Why it matters:
-
-Older domains may have legacy systems, while DNS records can reveal mail services or third-party providers.
-
-Subdomains
-
-Discovered subdomains expand the visible attack surface.
+Search engines can reveal publicly indexed information.
 
 Examples:
 
-mail.company.com
-support.company.com
-dev.company.com
+- Login pages
+- Public documents
+- Old websites
+- Exposed directories
+- Employee PDFs
+- Technology hints from job posts
 
-Risk considerations:
+This helps understand the public footprint of a target.
 
-Unpatched software on forgotten systems
-Default credentials on test panels
-Sensitive data on internal portals accidentally exposed
-Exposed Ports
+---
 
-Open ports indicate services listening on a server.
+## Information Collected
+
+## Domain Information
+
+Collected details may include:
+
+- Main domain
+- Registrar
+- Creation date
+- DNS records
+- SSL certificate details
+
+---
+
+## Subdomains
+
+Discovered subdomains increase the visible attack surface.
 
 Examples:
 
-Port	Service
-22	SSH
-80	HTTP
-443	HTTPS
-21	FTP
-3389	RDP
+- dev.company.com
+- support.company.com
+- mail.company.com
 
-Security relevance:
+Possible risks:
 
-Unnecessary open ports increase attack surface. Older services may also contain known vulnerabilities.
+- Old software
+- Test panels
+- Weak authentication
 
-Technologies Used
+---
 
-Reconnaissance can identify technologies running on a target website or server.
+## Exposed Ports
 
-Examples:
+Open ports indicate services running on a server.
 
-Web server: Apache / Nginx
-CMS: WordPress
-Framework: React / Laravel
-Analytics tools
-CDN providers
-Programming language hints
+| Port | Service |
+|------|---------|
+| 22   | SSH |
+| 80   | HTTP |
+| 443  | HTTPS |
+| 21   | FTP |
+| 3389 | RDP |
 
-Why it matters:
+Unnecessary open ports increase risk.
 
-Knowing the technology stack helps defenders understand exposure and patch requirements.
+---
 
-Example Reconnaissance Workflow
-Perform WHOIS lookup on target domain
-Enumerate subdomains using a subdomain finder
-Search Shodan for exposed ports and services
-Use Google search to identify indexed assets
-Record findings in a report
-Real-Life Example
+## Technologies Used
 
-During reconnaissance of a sample domain, the following findings were discovered:
+Reconnaissance may identify:
 
-WHOIS showed domain active for 8 years
-Subdomain finder revealed dev.example.com
-Shodan identified port 22 and 443 open
-Google indexed a public employee PDF
-Website technology indicated WordPress CMS
+- Apache / Nginx
+- WordPress
+- React
+- PHP
+- Cloudflare
+- Analytics tools
 
-This information could help prioritize security review of development systems and publicly exposed services.
+This helps understand the target environment.
 
-Conclusion
+---
 
-Reconnaissance is a critical first step in security testing. By using tools such as Shodan, WHOIS, subdomain finders, and search engines, analysts can identify external assets, exposed services, technologies, and potential weak points. Proper reconnaissance improves later testing phases and helps organizations understand their public attack surface.
+## Example Workflow
+
+1. Perform WHOIS lookup on target domain.
+2. Enumerate subdomains.
+3. Search target on Shodan.
+4. Use Google search for public assets.
+5. Document all findings.
+
+---
+
+## Example Findings
+
+- Domain active for 8 years
+- dev.example.com discovered
+- Port 22 and 443 exposed
+- Public employee PDF indexed
+- WordPress CMS detected
+
+---
+
+## Conclusion
+
+Reconnaissance is an important first step in security testing. It helps identify assets, services, technologies, and possible weak points before further assessment begins.
+
+Using tools such as Shodan, WHOIS, subdomain finders, and search engines allows analysts to better understand the target’s public attack surface.
