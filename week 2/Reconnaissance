@@ -1,1 +1,162 @@
+Reconnaissance Practice
+Introduction
 
+Reconnaissance is the information gathering phase of a security assessment. It is used to collect publicly available and technical information about a target before deeper testing begins. The goal is to understand the target’s external exposure, identify assets, discover technologies in use, and detect potential attack surfaces. This phase helps security professionals build an accurate picture of the organization’s digital footprint.
+
+Reconnaissance can be passive, where information is collected without directly interacting with the target, or active, where tools query services or systems. For this task, publicly available tools such as search engines and internet intelligence platforms are used.
+
+Tools Used
+Shodan
+
+Shodan is a search engine that indexes internet-connected devices and exposed services. It helps identify publicly accessible servers, open ports, banners, SSL certificates, webcams, routers, and other devices.
+
+Common use cases:
+
+Discover exposed remote access services like SSH or RDP
+Identify web servers and versions
+Find outdated or misconfigured systems
+View geographic exposure of assets
+
+Example findings:
+
+Port 22 open for SSH
+Port 443 open for HTTPS
+Web server banner showing software version
+WHOIS
+
+WHOIS is used to gather domain registration information. It helps identify ownership and administrative details related to a domain.
+
+Typical WHOIS data includes:
+
+Registrar name
+Domain creation date
+Expiration date
+Name servers
+Registrant organization (if public)
+Administrative contacts (sometimes masked)
+
+Usefulness:
+
+Understand domain history
+Identify associated infrastructure
+Verify legitimacy of domains
+Subdomain Finder
+
+Subdomain enumeration tools are used to identify subdomains associated with the main domain.
+
+Examples:
+
+blog.example.com
+mail.example.com
+dev.example.com
+api.example.com
+
+Why it matters:
+
+Many organizations secure the main website but overlook older or development subdomains. These can expose login panels, staging environments, test servers, or forgotten applications.
+
+Common tools:
+
+Sublist3r
+Amass
+Google Search
+
+Search engines can reveal publicly indexed information that may not be obvious from the homepage.
+
+Examples:
+
+Public PDFs containing employee names
+Login portals
+Old webpages
+Exposed directories
+Cached content
+Job listings showing technologies used
+
+Advanced search operators can refine results, such as searching for PDFs, admin pages, or specific site content.
+
+Information Collected During Reconnaissance
+Domain Information
+
+The following details are commonly collected:
+
+Main domain name
+Registrar
+Domain age
+DNS records
+Name servers
+SSL certificate details
+
+Why it matters:
+
+Older domains may have legacy systems, while DNS records can reveal mail services or third-party providers.
+
+Subdomains
+
+Discovered subdomains expand the visible attack surface.
+
+Examples:
+
+mail.company.com
+support.company.com
+dev.company.com
+
+Risk considerations:
+
+Unpatched software on forgotten systems
+Default credentials on test panels
+Sensitive data on internal portals accidentally exposed
+Exposed Ports
+
+Open ports indicate services listening on a server.
+
+Examples:
+
+Port	Service
+22	SSH
+80	HTTP
+443	HTTPS
+21	FTP
+3389	RDP
+
+Security relevance:
+
+Unnecessary open ports increase attack surface. Older services may also contain known vulnerabilities.
+
+Technologies Used
+
+Reconnaissance can identify technologies running on a target website or server.
+
+Examples:
+
+Web server: Apache / Nginx
+CMS: WordPress
+Framework: React / Laravel
+Analytics tools
+CDN providers
+Programming language hints
+
+Why it matters:
+
+Knowing the technology stack helps defenders understand exposure and patch requirements.
+
+Example Reconnaissance Workflow
+Perform WHOIS lookup on target domain
+Enumerate subdomains using a subdomain finder
+Search Shodan for exposed ports and services
+Use Google search to identify indexed assets
+Record findings in a report
+Real-Life Example
+
+During reconnaissance of a sample domain, the following findings were discovered:
+
+WHOIS showed domain active for 8 years
+Subdomain finder revealed dev.example.com
+Shodan identified port 22 and 443 open
+Google indexed a public employee PDF
+Website technology indicated WordPress CMS
+
+This information could help prioritize security review of development systems and publicly exposed services.
+
+Conclusion
+
+Reconnaissance is a critical first step in security testing. By using tools such as Shodan, WHOIS, subdomain finders, and search engines, analysts can identify external assets, exposed services, technologies, and potential weak points. Proper reconnaissance improves later testing phases and helps organizations understand their public attack surface.
