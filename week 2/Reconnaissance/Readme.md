@@ -32,6 +32,7 @@ Example Findings:
 - Port 22 open (SSH)
 - Port 443 open (HTTPS)
 - Apache server exposed
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/ce4f810e-ebe6-4a64-9944-2904ae5290fb" />
 
 ---
 
@@ -52,6 +53,7 @@ Usefulness:
 - Understand domain ownership
 - Check domain age
 - Verify legitimacy
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/c01ab2ce-0122-40c5-a43e-30c3350623ae" />
 
 ---
 
@@ -74,6 +76,8 @@ Common tools:
 
 - Sublist3r
 - Amass
+<img width="1280" height="800" alt="image" src="https://github.com/user-attachments/assets/af477af1-bc9c-4634-8941-c6728fbdadf3" />
+<img width="1280" height="800" alt="image" src="https://github.com/user-attachments/assets/9092c39f-c748-4fe0-a183-54bd075e3808" />
 
 ---
 
@@ -91,6 +95,10 @@ Examples:
 - Technology hints from job posts
 
 This helps understand the public footprint of a target.
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/4d10d59e-bc8f-4cd4-9e50-2ff9737f0b1c" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/9921a975-99f7-45cd-9c4a-af42c60dd247" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/afe366d7-0e96-4f24-a2d8-8f8dc243881f" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/e0710be9-9f97-462b-8dc7-9bcdd6b8e2a4" />
 
 ---
 
