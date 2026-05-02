@@ -5,57 +5,73 @@ To identify and analyze common web application vulnerabilities such as SQL Injec
 
 ## Lab Setup
 - Attacker Machine: Kali Linux  
-- Target: DVWA  
-- Target IP: 192.168.1.200  
-- Tools: Burp Suite, sqlmap  
+- Target: Practice Labs  
+- Tools: Burp Suite  
 
 ## Vulnerability Findings
 
-| ID  | Vulnerability     | Severity | URL                          |
-|-----|------------------|----------|-------------------------------|
-| 001 | SQL Injection    | Critical | http://192.168.1.200/login   |
-| 002 | XSS → CSRF       | High     | PortSwigger Lab              |
+| ID  | Vulnerability     | Severity | Target       |
+|-----|------------------|----------|---------------|
+| 001 | SQL Injection    | Critical | Login Function|
+| 002 | XSS → CSRF       | High     | Lab Environment|
 
 ---
 
-## 1. SQL Injection
-
-### Description
-The login page was vulnerable to SQL Injection due to improper input validation.
-
-### Testing
-Used sqlmap to test the login form:
 ## 1. SQL Injection (Manual – Admin Bypass)
 
 ### Description
-The login functionality is vulnerable to SQL Injection due to improper input validation, allowing authentication bypass.
+The login functionality was vulnerable to SQL Injection due to improper input validation, allowing authentication bypass.
 
-### Testing (Manual)
-Entered the following payloads in the login form:
-Payload: "admin' --"
+### Testing
+Intercepted the login request using Burp Suite and modified parameters.
 
-2. XSS Leading to CSRF
-Description
+**Original Request**
 
-A Cross-Site Scripting (XSS) vulnerability can be used to execute malicious JavaScript in a user's browser, which can then perform unauthorized actions (CSRF).
+username=wiener&password=peter
 
-Testing
-Injected payload:
+
+**Injected Payload**
+
+username=administrator'--&password=anything
+
+
+### Result
+- Authentication bypass achieved  
+- Logged in as administrator  
+- Access to restricted functionality obtained  
+
+### Explanation
+The payload `administrator'--` terminates the SQL query and comments out the password check. This allows login without validating the password.
+
+---
+
+## 2. XSS Leading to CSRF
+
+### Description
+A Cross-Site Scripting (XSS) vulnerability allows execution of malicious JavaScript in the victim’s browser. This can be used to perform unauthorized actions (CSRF).
+
+### Testing
+- Injected payload:
 <script>alert('XSS')</script>
-Verified script execution
-Used PortSwigger lab to simulate CSRF via XSS
-Attack Flow
-Inject malicious script (XSS)
-Script runs in victim’s browser
-Sends unauthorized request
-Action performed without user consent
-Summary
+- Verified script execution  
+- Used lab environment to simulate unauthorized action  
 
-The lab demonstrated critical vulnerabilities in the application. SQL Injection allowed backend database interaction, while XSS enabled script execution in the browser. XSS was further used to demonstrate CSRF behavior, showing how vulnerabilities can be chained for more severe attacks.
+### Attack Flow
+1. Inject malicious script (XSS)  
+2. Script executes in victim’s browser  
+3. Sends unauthorized request  
+4. Action performed without user consent  
 
-Remediation
-Validate and sanitize user input
-Use prepared statements for database queries
-Encode output to prevent XSS
-Implement CSRF tokens
-Improve authentication security
+---
+
+## Summary
+The lab demonstrated critical vulnerabilities in web applications. SQL Injection allowed authentication bypass and unauthorized access, while XSS enabled execution of malicious scripts. XSS was further used to simulate CSRF behavior, showing how vulnerabilities can be chained for more severe attacks.
+
+---
+
+## Remediation
+- Validate and sanitize all user inputs  
+- Use parameterized queries (prepared statements)  
+- Encode output to prevent XSS  
+- Implement CSRF protection mechanisms  
+- Improve authentication and session handling  
