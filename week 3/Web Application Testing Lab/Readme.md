@@ -42,6 +42,8 @@ username=administrator'--&password=anything
 
 ### Explanation
 The payload `administrator'--` terminates the SQL query and comments out the password check. This allows login without validating the password.
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/a0e3e78d-86df-484b-92e3-21d817e6e1aa" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/b546cd67-c063-4079-82bb-1e007ed83844" />
 
 ---
 
@@ -55,12 +57,17 @@ A Cross-Site Scripting (XSS) vulnerability allows execution of malicious JavaScr
 <script>alert('XSS')</script>
 - Verified script execution  
 - Used lab environment to simulate unauthorized action  
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/b9fb47f0-2330-4f1d-8997-1644982ca17e" />
+
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/1696aebe-e5fa-42ba-8c94-6683ca94b6b0" />
 
 ### Attack Flow
 1. Inject malicious script (XSS)  
 2. Script executes in victim’s browser  
 3. Sends unauthorized request  
 4. Action performed without user consent  
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/390bc897-1b83-46c2-8b7d-5d72591cda83" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/c76da1e2-79f8-481a-932d-859516b8376c" />
 
 ---
 
