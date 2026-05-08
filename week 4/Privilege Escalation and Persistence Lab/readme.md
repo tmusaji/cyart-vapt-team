@@ -30,8 +30,8 @@ This project demonstrates privilege escalation and persistence techniques perfor
 
 | Machine    | Role     | IP Address    |
 | ---------- | -------- | ------------- |
-| Kali Linux | Attacker | 192.168.1.100 |
-| Target VM  | Victim   | 192.168.1.200 |
+| Kali Linux | Attacker | 192.168.33.128 |
+| Target VM  | Victim   | 192.168.34.129 |
 
 ---
 
