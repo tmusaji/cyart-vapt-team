@@ -117,6 +117,7 @@ sudo ettercap -G
 * Victim assigned as Target 1
 * Gateway assigned as Target 2
 * ARP poisoning initiated with remote sniffing enabled
+<img width="1280" height="800" alt="image" src="https://github.com/user-attachments/assets/11c7b629-535d-43b7-b697-6cb489cd4e71" />
 
 ---
 
