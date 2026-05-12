@@ -45,10 +45,12 @@ A vulnerable Android application APK was installed on the emulator/device using 
 ```bash id="q7m2v4"
 adb install app.apk
 ```
+<img width="939" height="528" alt="image" src="https://github.com/user-attachments/assets/6974e40b-cb39-4a7f-994d-d8d01697ab7b" />
 
 ---
 
 # Step 2 — Start MobSF
+<img width="820" height="495" alt="image" src="https://github.com/user-attachments/assets/d492492d-1d8e-4f67-8f13-b9431a9ded82" />
 
 MobSF was started for static APK analysis.
 
@@ -78,6 +80,8 @@ The following areas were reviewed:
 * Application configuration issues
 
 ---
+<img width="935" height="419" alt="image" src="https://github.com/user-attachments/assets/5192d0e4-ebf9-42da-8572-683134d283c6" />
+<img width="940" height="505" alt="image" src="https://github.com/user-attachments/assets/d6be382c-97f1-4982-a97f-ec5b44f1afc0" />
 
 # Step 4 — Configure Burp Suite Proxy
 
@@ -89,6 +93,7 @@ Proxy settings:
 IP Address: Burp Host IP
 Port: 8080
 ```
+<img width="1345" height="711" alt="image" src="https://github.com/user-attachments/assets/141686f9-9c63-45e8-b764-7935e608977c" />
 
 ---
 
