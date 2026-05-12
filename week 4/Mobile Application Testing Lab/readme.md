@@ -118,6 +118,7 @@ The following activities were tested:
 * Session handling
 * Parameter manipulation
 * Authentication tokens
+<img width="939" height="552" alt="image" src="https://github.com/user-attachments/assets/025613ba-4547-4ce2-9bb5-6d7a40cbc433" />
 
 ---
 
@@ -156,6 +157,8 @@ The following components were reviewed:
 * Sensitive data storage
 
 ---
+<img width="940" height="528" alt="image" src="https://github.com/user-attachments/assets/8af8aac8-8a88-4ff7-868c-c0ae7bcd0029" />
+<img width="940" height="528" alt="image" src="https://github.com/user-attachments/assets/ea07ab0c-9b3a-4684-9e6a-17f9962cfa04" />
 
 # Findings
 
